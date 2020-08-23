@@ -1,24 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17124"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DepthPhotoCamera" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KID-aQ-yjQ">
+                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="tyR-UW-cJA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="Capture"/>
+                                <connections>
+                                    <action selector="capture" destination="BYZ-38-t0r" eventType="touchUpInside" id="yTL-wC-Swa"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KID-aQ-yjQ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="3MC-lQ-yCX"/>
+                            <constraint firstItem="KID-aQ-yjQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="B1H-n8-zIE"/>
+                            <constraint firstItem="KID-aQ-yjQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KwY-oB-0LS"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="captureButton" destination="KID-aQ-yjQ" id="gqm-of-OC7"/>
+                        <segue destination="tLl-va-ef1" kind="presentation" identifier="toDepthPreviewVC" id="86m-2w-fEt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="124"/>
+        </scene>
+        <!--Depth Preview View Controller-->
+        <scene sceneID="sOg-lY-RcC">
+            <objects>
+                <viewController id="tLl-va-ef1" customClass="DepthPreviewViewController" customModule="DepthPhotoCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LF8-l4-efy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7wR-NN-7cr">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cdo-vR-LLl">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="720"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aOB-cQ-UFf">
+                                                <rect key="frame" x="0.0" y="0.0" width="203" height="720"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YNo-GJ-zNq">
+                                                <rect key="frame" x="211" y="0.0" width="203" height="720"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-HA-XO1">
+                                        <rect key="frame" x="0.0" y="728" width="414" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="gKI-Rr-hI3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <state key="normal" title="Save to Camera Rool"/>
+                                        <connections>
+                                            <action selector="saveToCameraRoll" destination="tLl-va-ef1" eventType="touchUpInside" id="JfC-hc-fRf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xLH-ha-d6e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7wR-NN-7cr" firstAttribute="top" secondItem="xLH-ha-d6e" secondAttribute="top" id="FSf-pJ-qYW"/>
+                            <constraint firstItem="7wR-NN-7cr" firstAttribute="leading" secondItem="xLH-ha-d6e" secondAttribute="leading" id="HN9-qu-qsG"/>
+                            <constraint firstItem="xLH-ha-d6e" firstAttribute="bottom" secondItem="7wR-NN-7cr" secondAttribute="bottom" id="ahG-ld-bac"/>
+                            <constraint firstItem="xLH-ha-d6e" firstAttribute="trailing" secondItem="7wR-NN-7cr" secondAttribute="trailing" id="ydj-Vz-2J5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="depthImageView" destination="YNo-GJ-zNq" id="4vb-2u-7Su"/>
+                        <outlet property="imageView" destination="aOB-cQ-UFf" id="gxc-G5-zYB"/>
+                        <outlet property="saveToCameraRollButton" destination="BDu-HA-XO1" id="ETd-q4-WsR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2c5-te-wJc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="850"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

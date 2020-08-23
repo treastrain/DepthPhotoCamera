@@ -14,6 +14,8 @@
 		CBCBB7DC24F260D600E7BE8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBB7DB24F260D600E7BE8F /* ContentView.swift */; };
 		CBCBB7DE24F260D700E7BE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCBB7DD24F260D700E7BE8F /* Assets.xcassets */; };
 		CBCBB7E124F260D700E7BE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCBB7DF24F260D700E7BE8F /* LaunchScreen.storyboard */; };
+		CBCBB7EB24F268D100E7BE8F /* DepthPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBB7EA24F268D100E7BE8F /* DepthPreviewViewController.swift */; };
+		CBCBB7F224F2754C00E7BE8F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCBB7F124F2754600E7BE8F /* libc++.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CBCBB7DD24F260D700E7BE8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBCBB7E024F260D700E7BE8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBCBB7E224F260D700E7BE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBCBB7EA24F268D100E7BE8F /* DepthPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthPreviewViewController.swift; sourceTree = "<group>"; };
+		CBCBB7F124F2754600E7BE8F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCBB7F224F2754C00E7BE8F /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,7 @@
 			children = (
 				CBCBB7D124F260D600E7BE8F /* DepthPhotoCamera */,
 				CBCBB7D024F260D600E7BE8F /* Products */,
+				CBCBB7EC24F2751300E7BE8F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -61,6 +67,7 @@
 				CBCBB7D224F260D600E7BE8F /* AppDelegate.swift */,
 				CBCBB7D424F260D600E7BE8F /* SceneDelegate.swift */,
 				CBCBB7D624F260D600E7BE8F /* ViewController.swift */,
+				CBCBB7EA24F268D100E7BE8F /* DepthPreviewViewController.swift */,
 				CBCBB7D824F260D600E7BE8F /* Main.storyboard */,
 				CBCBB7DB24F260D600E7BE8F /* ContentView.swift */,
 				CBCBB7DD24F260D700E7BE8F /* Assets.xcassets */,
@@ -68,6 +75,14 @@
 				CBCBB7E224F260D700E7BE8F /* Info.plist */,
 			);
 			path = DepthPhotoCamera;
+			sourceTree = "<group>";
+		};
+		CBCBB7EC24F2751300E7BE8F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CBCBB7F124F2754600E7BE8F /* libc++.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBCBB7EB24F268D100E7BE8F /* DepthPreviewViewController.swift in Sources */,
 				CBCBB7D724F260D600E7BE8F /* ViewController.swift in Sources */,
 				CBCBB7D324F260D600E7BE8F /* AppDelegate.swift in Sources */,
 				CBCBB7DC24F260D600E7BE8F /* ContentView.swift in Sources */,
