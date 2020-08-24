@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,7 +15,7 @@
 		CBCBB7DE24F260D700E7BE8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBCBB7DD24F260D700E7BE8F /* Assets.xcassets */; };
 		CBCBB7E124F260D700E7BE8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBCBB7DF24F260D700E7BE8F /* LaunchScreen.storyboard */; };
 		CBCBB7EB24F268D100E7BE8F /* DepthPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBCBB7EA24F268D100E7BE8F /* DepthPreviewViewController.swift */; };
-		CBCBB7F224F2754C00E7BE8F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CBCBB7F124F2754600E7BE8F /* libc++.tbd */; };
+		CBD5792B24F39C100011023F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = CBD5792A24F39C100011023F /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,6 @@
 		CBCBB7E024F260D700E7BE8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBCBB7E224F260D700E7BE8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CBCBB7EA24F268D100E7BE8F /* DepthPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepthPreviewViewController.swift; sourceTree = "<group>"; };
-		CBCBB7F124F2754600E7BE8F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,7 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBCBB7F224F2754C00E7BE8F /* libc++.tbd in Frameworks */,
+				CBD5792B24F39C100011023F /* Zip in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,7 +79,6 @@
 		CBCBB7EC24F2751300E7BE8F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CBCBB7F124F2754600E7BE8F /* libc++.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -101,6 +99,9 @@
 			dependencies = (
 			);
 			name = DepthPhotoCamera;
+			packageProductDependencies = (
+				CBD5792A24F39C100011023F /* Zip */,
+			);
 			productName = DepthPhotoCamera;
 			productReference = CBCBB7CF24F260D600E7BE8F /* DepthPhotoCamera.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +129,9 @@
 				Base,
 			);
 			mainGroup = CBCBB7C624F260D600E7BE8F;
+			packageReferences = (
+				CBD5792924F39C100011023F /* XCRemoteSwiftPackageReference "Zip" */,
+			);
 			productRefGroup = CBCBB7D024F260D600E7BE8F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -308,6 +312,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TWATL5SE8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DepthPhotoCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -327,6 +335,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9TWATL5SE8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DepthPhotoCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -361,6 +373,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CBD5792924F39C100011023F /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CBD5792A24F39C100011023F /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CBD5792924F39C100011023F /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CBCBB7C724F260D600E7BE8F /* Project object */;
 }
