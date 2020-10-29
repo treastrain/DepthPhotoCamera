@@ -37,7 +37,7 @@ class ViewController: UIViewController, AVCapturePhotoCaptureDelegate {
     }
     
     func setup() {
-        guard let videoCaptureDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .unspecified) else {
+        guard let videoCaptureDevice = AVCaptureDevice.default(.builtInDualCamera, for: .video, position: .unspecified) ?? AVCaptureDevice.default(.builtInTrueDepthCamera, for: .video, position: .unspecified) else {
             print("No dual camera.")
             return
         }

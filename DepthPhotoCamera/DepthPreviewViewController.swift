@@ -41,6 +41,7 @@ class DepthPreviewViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var depthImageView: UIImageView!
     
+    @IBOutlet weak var saveInZipButton: UIButton!
     @IBOutlet weak var saveToCameraRollButton: UIButton!
     
     override func viewDidLoad() {
@@ -104,6 +105,8 @@ class DepthPreviewViewController: UIViewController, UIImagePickerControllerDeleg
             
             // 共有
             let activityViewController = UIActivityViewController(activityItems: [destinationUrl], applicationActivities: nil)
+            activityViewController.popoverPresentationController?.sourceView = self.view
+            activityViewController.popoverPresentationController?.sourceRect = self.saveInZipButton.frame
             self.present(activityViewController, animated: true) {
                 sender.setTitle("Re-save in ZIP", for: .normal)
                 sender.isEnabled = true
